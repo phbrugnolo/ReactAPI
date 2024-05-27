@@ -1,5 +1,5 @@
 import React from "react";
-import ProdutoListar from "./components/pages/produto/produto-listar";
+import ProdutoListar from "../components/pages/produto/produto-listar";
 
 function App() {
   return (
