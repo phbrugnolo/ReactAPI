@@ -51,7 +51,6 @@ function ProdutoListar() {
                 ))
              }
           </tbody>
-
       </table>
     </div>
   );
