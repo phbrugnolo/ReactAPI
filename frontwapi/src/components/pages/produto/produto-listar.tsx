@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Produto } from "../../../models/Produto";
+import axios from "axios";
 
 function ProdutoListar() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -21,6 +22,13 @@ function ProdutoListar() {
       });
   }
 
+  function remover(id: any){
+    axios.delete<Produto[]>(`http://localhost:5181/api/produtos/remover/${id}`)
+    .then((resposta) => {
+      setProdutos(resposta.data);
+    })
+  }
+
   return (
     <div>
       <h1>Lista de Produtos</h1>
@@ -34,6 +42,7 @@ function ProdutoListar() {
             <th>Preço</th>
             <th>Quantidade</th>
             <th>Criado Em</th>
+            <th>Remover</th>
           </tr>
           </thead>
           <tbody>
@@ -47,6 +56,9 @@ function ProdutoListar() {
                     <td>{produto.preco}</td>
                     <td>{produto.quantidade}</td>
                     <td>{produto.criadoEm}</td>
+                    <td>
+                      <button type="button" onClick={() => { remover(produto.id!) }}>Remover</button>
+                    </td>
                   </tr>
                 ))
              }

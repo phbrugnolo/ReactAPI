@@ -32,7 +32,7 @@ function App() {
           <Route path="/cep/consultar" element={<Cep/>}></Route>
         </Routes>
         <footer>
-          <p>Desenvolvido por piazadadev &copy; 2024</p>
+          <p>Desenvolvido por phbrugnolo &copy; 2024</p>
         </footer>
       </BrowserRouter>
     </div>
