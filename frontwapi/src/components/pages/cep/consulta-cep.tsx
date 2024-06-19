@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Cep } from "../../../models/Cep";
 
+
 function ConsultarCep() {
   const [cep, setCep] = useState("");
   const [rua, SetRua] = useState("");

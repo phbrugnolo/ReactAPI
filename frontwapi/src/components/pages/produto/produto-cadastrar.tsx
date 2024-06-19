@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Produto } from "../../../models/Produto";
 
+
 function ProdutoCadastrar() {
   const [preco, setPreco] = useState("");
   const [quantidade, setQuantidade] = useState("");
