@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Produto } from "../../../models/Produto";
+import { Link } from "react-router-dom";
 import axios from "axios";
+import { Produto } from "../../../models/Produto";
 
 function ProdutoListar() {
   const [produtos, setProdutos] = useState<Produto[]>([]);
@@ -58,6 +59,9 @@ function ProdutoListar() {
                     <td>{produto.criadoEm}</td>
                     <td>
                       <button type="button" onClick={() => { remover(produto.id!) }}>Remover</button>
+                    </td>
+                    <td>
+                      <button type="button"><Link to={`/produto/editar/${produto.id!}`}>Alterar</Link></button>
                     </td>
                   </tr>
                 ))
